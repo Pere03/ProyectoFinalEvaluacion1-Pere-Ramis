@@ -250,8 +250,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6698270062753614034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1.8481221, y: -0.08869, z: -0.08869}
+  m_LocalPosition: {x: 0, y: 0.032, z: 0}
+  m_LocalScale: {x: -1.8481221, y: -0.0366746, z: -0.08869}
   m_Children: []
   m_Father: {fileID: 6698270064383402154}
   m_RootOrder: 2
@@ -327,6 +327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6698270062851910978}
+  - component: {fileID: 973075417}
   m_Layer: 0
   m_Name: Aspas
   m_TagString: Untagged
@@ -351,6 +352,19 @@ Transform:
   m_Father: {fileID: 6698270063537323057}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -89.901, z: 0}
+--- !u!114 &973075417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698270062851910979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd7780bc5f97b14e8a7d9bb64af207c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnSpeed: 500
 --- !u!1 &6698270062944194031
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,8 +392,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6698270062944194031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1.8481221, y: -0.08869, z: -0.08869}
+  m_LocalPosition: {x: 0, y: 0.032, z: 0}
+  m_LocalScale: {x: -1.8481221, y: -0.036674604, z: -0.08869}
   m_Children: []
   m_Father: {fileID: 6698270062436614797}
   m_RootOrder: 2
@@ -566,7 +580,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6698270063537323063}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.37298733, y: 1.17, z: -0.37649885}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6698270064349646226}
@@ -590,9 +604,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318dc6af2b4941a43bdda00620123329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
-  verticalSpeed: 0
-  horizontalSpeed: 0
+  Speed: 7
+  TurnSpeed: 20
+  negRange: -200
+  posRange: 200
+  projectilPrefab: {fileID: 5915405770202722581, guid: 4a65e98e83aed0641b6869bc5699cc86, type: 3}
 --- !u!1 &6698270063602671573
 GameObject:
   m_ObjectHideFlags: 0

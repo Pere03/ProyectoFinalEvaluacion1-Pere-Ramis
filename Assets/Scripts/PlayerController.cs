@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     public float negRange = -200f;
     public float posRange = 200f;
-
+    public GameObject projectilPrefab;
     void Start()
     {
        
@@ -29,14 +29,14 @@ public class PlayerController : MonoBehaviour
 
        
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.Rotate(Vector3.back * TurnSpeed * Time.deltaTime * horizontalInput);
+        transform.Rotate(Vector3.up * TurnSpeed * Time.deltaTime * horizontalInput);
 
-        /*
-        if (transform.Rotate.x > posRange)
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            transform.Rotate = new Vector3(posRange, transform.Rotate.y,
-                transform.Rotate.z);
+            projectilPrefab.transform.rotation = gameObject.GetComponent<Transform>().rotation;
+
+            Instantiate(projectilPrefab, transform.position,
+                projectilPrefab.transform.rotation);
         }
-        */
     }
 }
