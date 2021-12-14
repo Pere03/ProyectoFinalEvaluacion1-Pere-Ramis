@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4368544556153374303}
   - component: {fileID: 4037603963413583320}
   - component: {fileID: 2586710057413833418}
+  - component: {fileID: -1900676931132154298}
   m_Layer: 0
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2556663497241311324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -91,11 +92,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2556663497241311324}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.2830303, y: 1.3085102, z: 1.2944255}
+  m_Center: {x: -0.012795687, y: 0.018774211, z: 0.0059150457}
 --- !u!114 &2586710057413833418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,4 +109,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd7780bc5f97b14e8a7d9bb64af207c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurnSpeed: 0
+  TurnSpeed: 500
+--- !u!114 &-1900676931132154298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2556663497241311324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d85c1792a5c3934ca6ac5a17412611d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

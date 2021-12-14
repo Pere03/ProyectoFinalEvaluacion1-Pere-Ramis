@@ -22,13 +22,14 @@ public class SpawnManager : MonoBehaviour
 
     public Vector3 RandomSpawnPosition()
     {
+        randomX = Random.Range(-200, 200);
+        randomY = Random.Range(0, 200);
+        randomZ = Random.Range(-200, 200);
         return new Vector3(randomX, randomY, randomZ);
     }
     public void SpawnObstacle()
     {
-        int randomX = Random.Range(-200, 200);
-        int randomY = Random.Range(-30, 100);
-        int randomZ = Random.Range(-100, 200);
+        
         spawnPosition = RandomSpawnPosition();
         Instantiate(obstacle, spawnPosition,
         obstacle.transform.rotation);

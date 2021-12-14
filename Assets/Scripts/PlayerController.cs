@@ -8,12 +8,18 @@ public class PlayerController : MonoBehaviour
     public float TurnSpeed;
     private float verticalInput;
     private float horizontalInput;
-    public float negRange = -200f;
-    public float posRange = 200f;
     public GameObject projectilPrefab;
+    public int Counter;
+    private float xPosLim = 200;
+    private float xNegLim = -200;
+    private float yPosLim = 200;
+    private float yNegLim = 0;
+    private float zPosLim = 200;
+    private float zNegLim = -200;
+
     void Start()
     {
-       
+        transform.position = new Vector3(0, 100, 0);
     }
 
     
@@ -38,5 +44,60 @@ public class PlayerController : MonoBehaviour
             Instantiate(projectilPrefab, transform.position,
                 projectilPrefab.transform.rotation);
         }
+
+        //Limita la posicion en X a los maximos/minimos que le hemos dado
+        if (transform.position.x > xPosLim)
+        {
+            transform.position = new Vector3(xPosLim, transform.position.y,
+                transform.position.z);
+        }
+
+        if (transform.position.x < xNegLim)
+        {
+            transform.position = new Vector3(xNegLim, transform.position.y,
+                transform.position.z);
+        }
+
+        //Limita la posicion en Y a los maximos/minimos que le hemos dado
+        if (transform.position.y > yPosLim)
+        {
+            transform.position = new Vector3(transform.position.x, yPosLim,
+                transform.position.z);
+        }
+
+        if (transform.position.y < yNegLim)
+        {
+            transform.position = new Vector3(transform.position.x, yNegLim,
+                 transform.position.z);
+        }
+
+        //Limita la posicion en Z a los maximos/minimos que le hemos dado
+        if (transform.position.z > zPosLim)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y,
+                zPosLim);
+        }
+
+        if (transform.position.z < zNegLim)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y,
+                 zNegLim);
+        }
+    }
+
+    private void OnTriggerEnter(Collider otherCollider)
+    {
+        if (otherCollider.gameObject.CompareTag("Coin"))
+        {
+            Destroy(otherCollider.gameObject);
+            Counter += 1;
+        }
+
+        if(Counter == 10)
+        {
+            Debug.Log("THE END");
+            Time.timeScale = 0;
+        }
+        
     }
 }
