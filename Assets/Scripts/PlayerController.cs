@@ -29,14 +29,15 @@ public class PlayerController : MonoBehaviour
        
         transform.Translate(Vector3.forward * Speed * Time.deltaTime);
 
-      
+      //Con esto hacemos el movimiento vertical
         verticalInput = Input.GetAxis("Vertical");
         transform.Rotate(Vector3.left * TurnSpeed * Time.deltaTime * verticalInput);
 
-       
+        //Con esto hacemos el movimiento horizontal
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up * TurnSpeed * Time.deltaTime * horizontalInput);
 
+        //Esto hace que si pulsamos control, instanciara el proyectil
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             projectilPrefab.transform.rotation = gameObject.GetComponent<Transform>().rotation;
@@ -87,17 +88,24 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider otherCollider)
     {
+        //Esto hace que si colision contra algo que tenga el tag coin, se destruira el objeto que lo tiene, y le sumara 1 al contador
         if (otherCollider.gameObject.CompareTag("Coin"))
         {
             Destroy(otherCollider.gameObject);
             Counter += 1;
         }
 
+        //Esto hace que si llega el contador a 10, se acaba el juego
         if(Counter == 10)
         {
             Debug.Log("THE END");
             Time.timeScale = 0;
         }
-        
+
+        if (otherCollider.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("GAME OVER");
+            Time.timeScale = 0;
+        }
     }
 }

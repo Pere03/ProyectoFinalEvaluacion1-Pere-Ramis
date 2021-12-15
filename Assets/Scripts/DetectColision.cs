@@ -17,6 +17,5 @@ public class DetectColision : MonoBehaviour
         {
             Destroy(otherCollider.gameObject);
         }
-
     }
 }

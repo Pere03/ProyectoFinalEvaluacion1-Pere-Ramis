@@ -434,7 +434,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Helicopter
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1035318487, guid: 1a0d142a9a8f46a4abb931e9543f49df, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1a0d142a9a8f46a4abb931e9543f49df, type: 3}
 --- !u!1001 &839878272
 PrefabInstance:
